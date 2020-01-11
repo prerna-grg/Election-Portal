@@ -29,6 +29,8 @@ contract Election{
 		candidates[candidateCount] = Candidate(candidateCount, _name , 0);
 	}
 
+	event votedEvent( uint indexed _candidateId );
+
 	function vote (uint _candidateId) public{
 		// not voted before
 		require(!voters[msg.sender]);
@@ -39,5 +41,7 @@ contract Election{
 		voters[msg.sender] = true;
 
 		candidates[_candidateId].voteCount++;
+
+		emit votedEvent(_candidateId);
 	}
 }

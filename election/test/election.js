@@ -40,8 +40,8 @@ contract("Election" , function(accounts){
       		return electionInstance.vote(candidateId, { from: accounts[0] });
     }).then(function(receipt) {
     		// the following two assertions are not working :(
-			//assert.equal(receipt.logs.length, 1, "an event was triggered");
-			//assert.equal(receipt.logs[0].event, "votedEvent", "the event type is correct");
+			assert.equal(receipt.logs.length, 1, "an event was triggered");
+			assert.equal(receipt.logs[0].event, "votedEvent", "the event type is correct");
 			assert.equal(receipt.logs[0].args._candidateId.toNumber(), candidateId, "the candidate id is correct");
 			return electionInstance.voters(accounts[0]);
 	}).then(function(voted) {
