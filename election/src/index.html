@@ -24,16 +24,20 @@
           <h1 class="text-center">Election Results</h1>
           <hr/>
           <br/>
+
+          
           <div id="loader">
             <p class="text-center">Loading...</p>
           </div>
+
+
           <div id="content" style="display: none;">
             <table class="table">
               <thead>
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Name</th>
-                  <th scope="col">Votes</th>
+                  <!-- <th scope="col">Votes</th> -->
                 </tr>
               </thead>
               <tbody id="candidatesResults">
@@ -49,8 +53,28 @@
               <button type="submit" class="btn btn-primary">Vote</button>
               <hr />
             </form>
+            <p id="voteMessage" class="text-center"></p>
             <p id="accountAddress" class="text-center"></p>
           </div>
+
+
+          <div id="results" style="display: none;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Votes</th>
+                </tr>
+              </thead>
+              <tbody id="finalResults">
+              </tbody>
+            </table>
+            <hr/>
+            <p id="accountAddress" class="text-center"></p>
+          </div>
+          
+
         </div>
       </div>
     </div>
